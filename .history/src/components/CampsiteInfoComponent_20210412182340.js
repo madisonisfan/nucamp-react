@@ -40,6 +40,7 @@ function RenderCampsite({ campsite }) {
       <Card>
         <CardImg top src={campsite.image} alt={campsite.name} />
         <CardBody>
+          <CardTitle>{campsite.name}</CardTitle>
           <CardText>{campsite.description}</CardText>
         </CardBody>
       </Card>
@@ -52,18 +53,12 @@ function CampsiteInfo(props) {
   if (campsite) {
     return (
       <div className="container">
-        <div className="row">
-          <div className="col">
-            <Breadcrumb>
-              <BreadcrumbItem>
-                <Link to="/directory">Directory</Link>
-              </BreadcrumbItem>
-              <BreadcrumbItem active>{props.campsite.name}</BreadcrumbItem>
-            </Breadcrumb>
-            <h2>{props.campsite.name}</h2>
-            <hr />
-          </div>
-        </div>
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <Link to="/home">Home</Link>
+          </BreadcrumbItem>
+          <BreadcrumbItem active>Directory</BreadcrumbItem>
+        </Breadcrumb>
         <div className="row">
           <RenderCampsite campsite={props.campsite} />
           <RenderComments comments={props.campsite.comments} />

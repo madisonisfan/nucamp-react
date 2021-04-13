@@ -11,7 +11,7 @@ function Contact(props) {
             <BreadcrumbItem>
               <Link to="/home">Home</Link>
             </BreadcrumbItem>
-            <BreadcrumbItem active>Contact Us</BreadcrumbItem>
+            <BreadcrumbItem active>Directory</BreadcrumbItem>
           </Breadcrumb>
           <h2>Contact Us</h2>
           <hr />

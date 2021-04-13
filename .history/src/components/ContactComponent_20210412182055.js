@@ -1,5 +1,12 @@
 import React from "react";
-import { BreadcrumbItem, Breadcrumb } from "reactstrap";
+import {
+  Card,
+  CardImg,
+  CardImgOverlay,
+  CardTitle,
+  BreadcrumbItem,
+  Breadcrumb,
+} from "reactstrap";
 import { Link } from "react-router-dom";
 
 function Contact(props) {
@@ -7,12 +14,6 @@ function Contact(props) {
     <div className="container">
       <div className="row">
         <div className="col">
-          <Breadcrumb>
-            <BreadcrumbItem>
-              <Link to="/home">Home</Link>
-            </BreadcrumbItem>
-            <BreadcrumbItem active>Contact Us</BreadcrumbItem>
-          </Breadcrumb>
           <h2>Contact Us</h2>
           <hr />
         </div>

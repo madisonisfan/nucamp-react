@@ -38,10 +38,8 @@ function Directory(props) {
             <BreadcrumbItem>
               <Link to="/home">Home</Link>
             </BreadcrumbItem>
-            <BreadcrumbItem active>Directory</BreadcrumbItem>
+            <BreadcrumbItem></BreadcrumbItem>
           </Breadcrumb>
-          <h2>Directory</h2>
-          <hr />
         </div>
       </div>
       <div className="row">{directory}</div>
