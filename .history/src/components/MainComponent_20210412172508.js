@@ -49,7 +49,6 @@ class Main extends Component {
             (comment) => comment.campsiteId === +match.params.campsiteId
           )}
         />
-        /*We want the whole comments array  so don't need to add [0]*/
       );
     };
 
