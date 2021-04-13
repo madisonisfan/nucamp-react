@@ -32,7 +32,9 @@ class Main extends Component {
           promotion={
             this.state.promotions.filter((promotion) => promotion.featured)[0]
           }
-          partner={this.state.partners.filter((partner) => partner.featured)[0]}
+          partners={
+            this.state.partners.filter((partner) => partner.featured)[0]
+          }
         />
       );
     };
