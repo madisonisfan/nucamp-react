@@ -36,10 +36,10 @@ class Contact extends Component {
 
   validate(firstName, lastName, phoneNum, email) {
     const errors = {
-      firstName: "",
-      lastName: "",
-      phoneNum: "",
-      email: "",
+      firstName: " ",
+      lastName: " ",
+      phoneNum: " ",
+      email: " ",
     };
 
     if (this.state.touched.firstName) {
@@ -57,14 +57,13 @@ class Contact extends Component {
         errors.lastName = "Last name must be 15 or less characters.";
       }
     }
-
     const reg = /^\d+$/;
     if (this.state.touched.phoneNum && !reg.test(phoneNum)) {
       errors.phoneNum = "The phone number should contain only numbers.";
     }
 
     if (this.state.touched.email && !email.includes("@")) {
-      errors.email = "Email should contain a @";
+      errors.email = " Emal should contain a @";
     }
 
     return errors;
