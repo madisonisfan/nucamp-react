@@ -65,10 +65,6 @@ class Main extends Component {
             render={() => <Directory campsites={this.state.campsites} />}
           />
           <Route path="/contactus" component={Contact} />
-          <Route
-            path="/aboutus"
-            render={() => <About partners={this.state.partners} />}
-          />
           <Route path="/directory/:campsiteId" component={CampsiteWithId} />
           <Redirect to="/home" />
         </Switch>
