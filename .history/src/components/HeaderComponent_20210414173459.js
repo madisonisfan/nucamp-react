@@ -14,7 +14,6 @@ import {
   Form,
   FormGroup,
   Label,
-  Input,
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
@@ -132,11 +131,7 @@ class Header extends Component {
               </FormGroup>
               <FormGroup check>
                 <Label check>
-                  <Input
-                    type="checkbox"
-                    name="remember"
-                    innerRef={(input) => (this.remember = input)}
-                  />
+                  <Input type="checkbox" name="remember" />
                   Remember me
                 </Label>
               </FormGroup>

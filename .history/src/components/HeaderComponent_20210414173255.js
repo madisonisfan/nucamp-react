@@ -14,7 +14,6 @@ import {
   Form,
   FormGroup,
   Label,
-  Input,
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
@@ -28,7 +27,6 @@ class Header extends Component {
     };
     this.toggleNav = this.toggleNav.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
-    this.handleLogin = this.handleLogin.bind(this);
   }
 
   toggleNav() {
@@ -114,29 +112,15 @@ class Header extends Component {
             <Form onSubmit={this.handleLogin}>
               <FormGroup>
                 <Label htmlFor="username">Username</Label>
-                <Input
-                  type="text"
-                  id="username"
-                  name="username"
-                  innerRef={(input) => (this.username = input)}
-                />
+                <Input type="text" id="username" name="username" />
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="password">Password</Label>
-                <Input
-                  type="text"
-                  id="password"
-                  name="password"
-                  innerRef={(input) => (this.password = input)}
-                />
+                <Input type="text" id="password" name="password" />
               </FormGroup>
               <FormGroup check>
                 <Label check>
-                  <Input
-                    type="checkbox"
-                    name="remember"
-                    innerRef={(input) => (this.remember = input)}
-                  />
+                  <Input type="checkbox" name="remember" />
                   Remember me
                 </Label>
               </FormGroup>
