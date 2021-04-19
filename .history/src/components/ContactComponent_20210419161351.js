@@ -98,16 +98,16 @@ class Contact extends Component {
                 </Label>
                 <Col md={10}>
                   <Control.text
-                    model=".firstName"
-                    id="firstName"
-                    name="firstName"
-                    placeholder="First Name"
-                    className="form-control"
                     validators={{
                       required,
                       minLength: minLength(2),
                       maxLength: maxLength(15),
                     }}
+                    model=".firstName"
+                    className="form-control"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="First Name"
                   />
                   <Errors
                     className="text-danger"
@@ -128,16 +128,16 @@ class Contact extends Component {
                 </Label>
                 <Col md={10}>
                   <Control.text
-                    model=".lastName"
-                    id="lastName"
-                    name="lastName"
-                    placeholder="Last Name"
-                    className="form-control"
                     validators={{
                       required,
                       minLength: minLength(2),
                       maxLength: maxLength(15),
                     }}
+                    model=".lastName"
+                    className="form-control"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Last Name"
                   />
                   <Errors
                     className="text-danger"
@@ -158,21 +158,21 @@ class Contact extends Component {
                 </Label>
                 <Col md={10}>
                   <Control.text
-                    model=".phoneNum"
-                    id="phoneNum"
-                    name="phoneNum"
-                    placeholder="Phone number"
-                    className="form-control"
                     validators={{
                       required,
                       minLength: minLength(10),
                       maxLength: maxLength(15),
                       isNumber,
                     }}
+                    model=".phoneNum"
+                    className="form-control"
+                    id="phoneNum"
+                    name="phoneNum"
+                    placeholder="Phone number"
                   />
                   <Errors
                     className="text-danger"
-                    model=".phoneNum"
+                    model=".phoneNuum"
                     show="touched"
                     component="div"
                     messages={{
@@ -190,10 +190,10 @@ class Contact extends Component {
                 </Label>
                 <Col md={10}>
                   <Control.text
-                    model=".email"
                     id="email"
                     name="email"
                     placeholder="Email"
+                    model=".email"
                     className="form-control"
                     validators={{
                       required,
@@ -202,7 +202,7 @@ class Contact extends Component {
                   />
                   <Errors
                     className="text-danger"
-                    model=".email"
+                    model=".emaik"
                     show="touched"
                     component="div"
                     messages={{
