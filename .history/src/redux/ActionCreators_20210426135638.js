@@ -10,9 +10,9 @@ export const addComment = (campsiteId, rating, author, text) => ({
     text: text,
   },
 });
+
 export const fetchCampsites = () => (dispatch) => {
   dispatch(campsitesLoading());
-
   setTimeout(() => {
     dispatch(addCampsites(CAMPSITES));
   }, 2000);

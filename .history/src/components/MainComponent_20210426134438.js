@@ -57,8 +57,6 @@ class Main extends Component {
               (campsite) => campsite.id === +match.params.campsiteId
             )[0]
           }
-          isLoading={this.props.campsites.isLoading}
-          errMess={this.props.campsites.errMess}
           comments={this.props.comments.filter(
             (comment) => comment.campsiteId === +match.params.campsiteId
           )}

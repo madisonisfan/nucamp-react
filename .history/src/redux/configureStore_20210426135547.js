@@ -8,13 +8,12 @@ import { Comments } from "./comments";
 
 export const ConfigureStore = () => {
   const store = createStore(
-    combineReducers({
-      campsites: Campsites,
-      comments: Comments,
-      partners: Partners,
-      promotions: Promotions,
-    }),
-    applyMiddleware(thunk, logger)
+    campsites: Campsites,
+            comments: Comments,
+            partners: Partners,
+            promotions: Promotions
+        }),
+        applyMiddleware(thunk, logger)
   );
 
   return store;

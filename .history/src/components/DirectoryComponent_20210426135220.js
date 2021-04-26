@@ -31,7 +31,6 @@ function Directory(props) {
       </div>
     );
   });
-
   if (props.campsites.isLoading) {
     return (
       <div className="container">

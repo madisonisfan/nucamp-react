@@ -15,7 +15,6 @@ import {
 import { Control, LocalForm, Errors } from "react-redux-form";
 import { Link } from "react-router-dom";
 import ModalBody from "reactstrap/lib/ModalBody";
-import { Loading } from "./LoadingComponent";
 
 const minLength = (length) => (val) => val && val.length >= length;
 const maxLength = (length) => (val) => !val || val.length <= length;
@@ -159,27 +158,6 @@ function RenderCampsite({ campsite }) {
 
 function CampsiteInfo(props) {
   const campsite = props.campsite;
-
-  if (props.isLoading) {
-    return (
-      <div className="container">
-        <div className="row">
-          <Loading />
-        </div>
-      </div>
-    );
-  }
-  if (props.errMess) {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <h4>{props.errMess}</h4>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   if (campsite) {
     return (

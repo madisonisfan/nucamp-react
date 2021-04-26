@@ -159,27 +159,27 @@ function RenderCampsite({ campsite }) {
 
 function CampsiteInfo(props) {
   const campsite = props.campsite;
-
-  if (props.isLoading) {
-    return (
-      <div className="container">
-        <div className="row">
-          <Loading />
-        </div>
-      </div>
-    );
-  }
-  if (props.errMess) {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <h4>{props.errMess}</h4>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  function CampsiteInfo(props) {
+    if (props.isLoading) {
+        return (
+            <div className="container">
+                <div className="row">
+                    <Loading />
+                </div>
+            </div>
+        );
+    }
+    if (props.errMess) {
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col">
+                        <h4>{props.errMess}</h4>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
   if (campsite) {
     return (

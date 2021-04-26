@@ -3,11 +3,11 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
 import { Loading } from "./LoadingComponent";
 
 function RenderCard({ item, isLoading, errMess }) {
-  if (isLoading) {
+  if (sLoading) {
     return <Loading />;
   }
   if (errMess) {
-    return <h4>{errMess}</h4>;
+    return <h4>errMess}</h4>;
   }
   return (
     <Card>
@@ -25,11 +25,7 @@ function Home(props) {
     <div className="container">
       <div className="row">
         <div className="col-md m-1">
-          <RenderCard
-            item={props.campsite}
-            isLoading={props.campsitesLoading}
-            errMess={props.campsitesErrMess}
-          />
+          <RenderCard item={props.campsite} />
         </div>
         <div className="col-md m-1">
           <RenderCard item={props.promotion} />

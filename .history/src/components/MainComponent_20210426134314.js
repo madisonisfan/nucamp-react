@@ -35,12 +35,8 @@ class Main extends Component {
       return (
         <Home
           campsite={
-            this.props.campsites.campsites.filter(
-              (campsite) => campsite.featured
-            )[0]
+            this.props.campsites.filter((campsite) => campsite.featured)[0]
           }
-          campsitesLoading={this.props.campsites.isLoading}
-          campsitesErrMess={this.props.campsites.errMess}
           promotion={
             this.props.promotions.filter((promotion) => promotion.featured)[0]
           }
@@ -53,12 +49,10 @@ class Main extends Component {
       return (
         <CampsiteInfo
           campsite={
-            this.props.campsites.campsites.filter(
+            this.props.campsites.filter(
               (campsite) => campsite.id === +match.params.campsiteId
             )[0]
           }
-          isLoading={this.props.campsites.isLoading}
-          errMess={this.props.campsites.errMess}
           comments={this.props.comments.filter(
             (comment) => comment.campsiteId === +match.params.campsiteId
           )}
