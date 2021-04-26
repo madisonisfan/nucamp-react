@@ -182,3 +182,11 @@ function CampsiteInfo(props) {
 }
 
 export default CampsiteInfo;
+
+/* 
+
+add this back into RenderComments: <CommentForm /> think I can remove this one 
+
+
+
+*/

@@ -6,7 +6,6 @@ import Home from "./HomeComponent";
 import About from "./AboutComponent";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-
 import Contact from "./ContactComponent";
 import CampsiteInfo from "./CampsiteInfoComponent";
 
@@ -36,6 +35,11 @@ class Main extends Component {
     };
 
     const CampsiteWithId = ({ match }) => {
+      alert(
+        `${this.props.comments.filter(
+          (comment) => comment.campsiteId === +match.params.campsiteId
+        )}`
+      );
       return (
         <CampsiteInfo
           campsite={

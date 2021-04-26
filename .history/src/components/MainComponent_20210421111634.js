@@ -36,6 +36,7 @@ class Main extends Component {
     };
 
     const CampsiteWithId = ({ match }) => {
+      alert(`Match params${match.params.campsiteId}`);
       return (
         <CampsiteInfo
           campsite={

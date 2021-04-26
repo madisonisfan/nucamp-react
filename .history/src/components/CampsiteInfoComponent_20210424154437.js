@@ -52,6 +52,75 @@ class CommentForm extends Component {
     super(props);
     this.state = {
       isModalOpen: false,
+    };
+    this.toggleModal = this.toggleModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  toggleModal() {}
+
+  render() {
+    return (
+      <Button outline>
+        <i className="fa fa-pencil fa-lg" /> Submit Comment
+      </Button>
+    );
+  }
+}
+
+function RenderCampsite({ campsite }) {
+  return (
+    <div className="col-md-5 m-1">
+      <Card>
+        <CardImg top src={campsite.image} alt={campsite.name} />
+        <CardBody>
+          <CardText>{campsite.description}</CardText>
+        </CardBody>
+      </Card>
+    </div>
+  );
+}
+
+function CampsiteInfo(props) {
+  const campsite = props.campsite;
+
+  if (campsite) {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <Breadcrumb>
+              <BreadcrumbItem>
+                <Link to="/directory">Directory</Link>
+              </BreadcrumbItem>
+              <BreadcrumbItem active>{props.campsite.name}</BreadcrumbItem>
+            </Breadcrumb>
+            <h2>{props.campsite.name}</h2>
+            <hr />
+          </div>
+        </div>
+        <div className="row">
+          <RenderCampsite campsite={props.campsite} />
+          <RenderComments comments={props.comments} />
+        </div>
+      </div>
+    );
+  } else {
+    return <div />;
+  }
+}
+
+export default CampsiteInfo;
+
+/* 
+
+add this back into RenderComments: <CommentForm /> think I can remove this one 
+
+class CommentForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false,
       rating: "1",
       author: "",
       text: "",
@@ -139,46 +208,4 @@ class CommentForm extends Component {
   }
 }
 
-function RenderCampsite({ campsite }) {
-  return (
-    <div className="col-md-5 m-1">
-      <Card>
-        <CardImg top src={campsite.image} alt={campsite.name} />
-        <CardBody>
-          <CardText>{campsite.description}</CardText>
-        </CardBody>
-      </Card>
-    </div>
-  );
-}
-
-function CampsiteInfo(props) {
-  const campsite = props.campsite;
-
-  if (campsite) {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <Breadcrumb>
-              <BreadcrumbItem>
-                <Link to="/directory">Directory</Link>
-              </BreadcrumbItem>
-              <BreadcrumbItem active>{props.campsite.name}</BreadcrumbItem>
-            </Breadcrumb>
-            <h2>{props.campsite.name}</h2>
-            <hr />
-          </div>
-        </div>
-        <div className="row">
-          <RenderCampsite campsite={props.campsite} />
-          <RenderComments comments={props.comments} />
-        </div>
-      </div>
-    );
-  } else {
-    return <div />;
-  }
-}
-
-export default CampsiteInfo;
+*/

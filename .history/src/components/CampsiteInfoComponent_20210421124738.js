@@ -19,34 +19,6 @@ import ModalBody from "reactstrap/lib/ModalBody";
 const minLength = (length) => (val) => val && val.length >= length;
 const maxLength = (length) => (val) => !val || val.length <= length;
 
-function RenderComments({ comments }) {
-  //alert(`RenderComments: ${comments}`);
-  if (comments) {
-    return (
-      <React.Fragment>
-        <div className="col col-md-5 m-1">
-          <h4>Comments</h4>
-          {comments.map((comment) => {
-            return (
-              <div className="mb-3" key={comment.id}>
-                {comment.text} <br />
-                -- {comment.author},{" "}
-                {new Intl.DateTimeFormat("en-US", {
-                  year: "numeric",
-                  month: "short",
-                  day: "2-digit",
-                }).format(new Date(Date.parse(comment.date)))}
-              </div>
-            );
-          })}
-          <CommentForm />
-        </div>
-      </React.Fragment> //don't really need
-    );
-  } //if
-  return <div />;
-}
-
 class CommentForm extends Component {
   constructor(props) {
     super(props);
@@ -137,6 +109,38 @@ class CommentForm extends Component {
       </React.Fragment>
     );
   }
+}
+
+function RenderComments({ comments }) {
+  //alert(`RenderComments: ${comments}`);
+  if (comments) {
+    return (
+      <React.Fragment>
+        <div className="col col-md-5 m-1">
+          <h4>Comments</h4>
+          {comments.map((comment) => {
+            return (
+              <div className="mb-3">
+                {comment.text} <br />
+                -- {comment.author},{" "}
+                {new Intl.DateTimeFormat("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "2-digit",
+                }).format(new Date(Date.parse(comment.date)))}
+              </div>
+            );
+          })}
+        </div>
+        <CommentForm />
+      </React.Fragment>
+    );
+  } //if
+  return (
+    <div>
+      <CommentForm />
+    </div>
+  );
 }
 
 function RenderCampsite({ campsite }) {
