@@ -65,13 +65,15 @@ class CommentForm extends Component {
   }
 
   handleSubmit(values) {
-    this.toggleModal();
+    alert("Current State is: " + JSON.stringify(values));
+    console.log("Current State is: " + JSON.stringify(values));
     this.props.addComment(
       this.props.campsiteId,
       values.rating,
       values.author,
       values.text
     );
+    this.toggleModal();
   }
 
   render() {

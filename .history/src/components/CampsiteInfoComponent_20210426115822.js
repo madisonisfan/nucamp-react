@@ -19,7 +19,7 @@ import ModalBody from "reactstrap/lib/ModalBody";
 const minLength = (length) => (val) => val && val.length >= length;
 const maxLength = (length) => (val) => !val || val.length <= length;
 
-function RenderComments({ comments, addComment, campsiteId }) {
+function RenderComments({ comments }) {
   //alert(`RenderComments: ${comments}`);
   if (comments) {
     return (
@@ -39,7 +39,7 @@ function RenderComments({ comments, addComment, campsiteId }) {
               </div>
             );
           })}
-          <CommentForm campsiteId={campsiteId} addComment={addComment} />
+          <CommentForm />
         </div>
       </React.Fragment> //don't really need
     );
@@ -65,13 +65,9 @@ class CommentForm extends Component {
   }
 
   handleSubmit(values) {
+    alert("Current State is: " + JSON.stringify(values));
+    console.log("Current State is: " + JSON.stringify(values));
     this.toggleModal();
-    this.props.addComment(
-      this.props.campsiteId,
-      values.rating,
-      values.author,
-      values.text
-    );
   }
 
   render() {
@@ -178,7 +174,7 @@ function CampsiteInfo(props) {
           <RenderCampsite campsite={props.campsite} />
           <RenderComments
             comments={props.comments}
-            addComment={props.addComment}
+            addComments={props.addComments}
             campsiteId={props.campsite.id}
           />
         </div>
