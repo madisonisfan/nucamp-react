@@ -11,7 +11,7 @@ import CampsiteInfo from "./CampsiteInfoComponent";
 import {
   addComment,
   fetchCampsites,
-  fetchComments,
+  fetchCommments,
   fetchPromotions,
 } from "../redux/ActionCreators";
 import { actions } from "react-redux-form";
@@ -30,15 +30,13 @@ const mapDispatchToProps = {
     addComment(campsiteId, rating, author, text),
   fetchCampsites: () => fetchCampsites(),
   resetFeedbackForm: () => actions.reset("feedbackForm"),
-  fetchComments: () => fetchComments(),
+  fetchCommments: () => fetchCommments(),
   fetchPromotions: () => fetchPromotions(),
 };
 
 class Main extends Component {
   componentDidMount() {
     this.props.fetchCampsites();
-    this.props.fetchComments();
-    this.props.fetchPromotions();
   }
 
   render() {
@@ -53,12 +51,8 @@ class Main extends Component {
           campsitesLoading={this.props.campsites.isLoading}
           campsitesErrMess={this.props.campsites.errMess}
           promotion={
-            this.props.promotions.promotions.filter(
-              (promotion) => promotion.featured
-            )[0]
+            this.props.promotions.filter((promotion) => promotion.featured)[0]
           }
-          promotionLoading={this.props.promotions.isLoading}
-          promotionErrMess={this.props.promotions.errMess}
           partner={this.props.partners.filter((partner) => partner.featured)[0]}
         />
       );
@@ -74,10 +68,9 @@ class Main extends Component {
           }
           isLoading={this.props.campsites.isLoading}
           errMess={this.props.campsites.errMess}
-          comments={this.props.comments.comments.filter(
+          comments={this.props.comments.filter(
             (comment) => comment.campsiteId === +match.params.campsiteId
           )}
-          commentsErrMess={this.props.comments.errMess}
           addComment={this.props.addComment}
         />
       );

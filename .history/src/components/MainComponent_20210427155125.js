@@ -11,7 +11,7 @@ import CampsiteInfo from "./CampsiteInfoComponent";
 import {
   addComment,
   fetchCampsites,
-  fetchComments,
+  fetchCommments,
   fetchPromotions,
 } from "../redux/ActionCreators";
 import { actions } from "react-redux-form";
@@ -30,15 +30,15 @@ const mapDispatchToProps = {
     addComment(campsiteId, rating, author, text),
   fetchCampsites: () => fetchCampsites(),
   resetFeedbackForm: () => actions.reset("feedbackForm"),
-  fetchComments: () => fetchComments(),
+  fetchCommments: () => fetchCommments(),
   fetchPromotions: () => fetchPromotions(),
 };
 
 class Main extends Component {
   componentDidMount() {
     this.props.fetchCampsites();
-    this.props.fetchComments();
     this.props.fetchPromotions();
+    this.props.fetchCommments();
   }
 
   render() {

@@ -30,15 +30,15 @@ const mapDispatchToProps = {
     addComment(campsiteId, rating, author, text),
   fetchCampsites: () => fetchCampsites(),
   resetFeedbackForm: () => actions.reset("feedbackForm"),
-  fetchComments: () => fetchComments(),
+  fetchCommments: () => fetchCommments(),
   fetchPromotions: () => fetchPromotions(),
 };
 
 class Main extends Component {
   componentDidMount() {
     this.props.fetchCampsites();
-    this.props.fetchComments();
     this.props.fetchPromotions();
+    this.props.fetchCommments();
   }
 
   render() {

@@ -56,7 +56,6 @@ export const fetchPromotions = () => (dispatch) => {
     .then((response) => response.json())
     .then((promotions) => dispatch(addPromotions(promotions)));
 };
-
 export const promotionsLoading = () => ({
   type: ActionTypes.PROMOTIONS_LOADING,
 });
