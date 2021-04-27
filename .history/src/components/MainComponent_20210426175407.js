@@ -80,13 +80,7 @@ class Main extends Component {
             render={() => <Directory campsites={this.props.campsites} />}
           />
           <Route path="/directory/:campsiteId" component={CampsiteWithId} />
-          <Route
-            exact
-            path="/contactus"
-            render={() => (
-              <Contact resetFeedbackForm={this.props.resetFeedbackForm} />
-            )}
-          />
+          <Route exact path="/contactus" render={()=><Contact resetFeedbackForm={this.props.resetFeedbackForm/>} />
           <Route
             exact
             path="/aboutus"

@@ -92,10 +92,7 @@ class Contact extends Component {
             <hr />
           </div>
           <div className="col-md-10">
-            <Form
-              model="feedbackForm"
-              onSubmit={(values) => this.handleSubmit(values)}
-            >
+            <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
               <Row className="form-group">
                 <Label htmlFor="firstName" md={2}>
                   First Name
@@ -262,7 +259,7 @@ class Contact extends Component {
                   </Button>
                 </Col>
               </Row>
-            </Form>
+            </LocalForm>
           </div>
         </div>
       </div>
