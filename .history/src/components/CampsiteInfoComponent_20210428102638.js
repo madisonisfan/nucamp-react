@@ -29,23 +29,19 @@ function RenderComments({ comments, postComment, campsiteId }) {
       <React.Fragment>
         <div className="col col-md-5 m-1">
           <h4>Comments</h4>
-          <Stagger in>
-            {comments.map((comment) => {
-              return (
-                <Fade in key={comment.id}>
-                  <div className="mb-3">
-                    {comment.text} <br />
-                    -- {comment.author},{" "}
-                    {new Intl.DateTimeFormat("en-US", {
-                      year: "numeric",
-                      month: "short",
-                      day: "2-digit",
-                    }).format(new Date(Date.parse(comment.date)))}
-                  </div>
-                </Fade>
-              );
-            })}
-          </Stagger>
+          {comments.map((comment) => {
+            return (
+              <div className="mb-3" key={comment.id}>
+                {comment.text} <br />
+                -- {comment.author},{" "}
+                {new Intl.DateTimeFormat("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "2-digit",
+                }).format(new Date(Date.parse(comment.date)))}
+              </div>
+            );
+          })}
           <CommentForm campsiteId={campsiteId} postComment={postComment} />
         </div>
       </React.Fragment> //don't really need
@@ -153,19 +149,12 @@ class CommentForm extends Component {
 function RenderCampsite({ campsite }) {
   return (
     <div className="col-md-5 m-1">
-      <FadeTransform
-        in
-        transformProps={{
-          exitTransform: "scale(0.5) translateY(-50%)",
-        }}
-      >
-        <Card>
-          <CardImg top src={baseUrl + campsite.image} alt={campsite.name} />
-          <CardBody>
-            <CardText>{campsite.description}</CardText>
-          </CardBody>
-        </Card>
-      </FadeTransform>
+      <Card>
+        <CardImg top src={baseUrl + campsite.image} alt={campsite.name} />
+        <CardBody>
+          <CardText>{campsite.description}</CardText>
+        </CardBody>
+      </Card>
     </div>
   );
 }
