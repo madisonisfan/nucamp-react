@@ -87,13 +87,13 @@ export const postComment = (campsiteId, rating, author, text) => (dispatch) => {
     author: author,
     text: text,
   };
-  newComment.date = new Date().toISOString();
+  newComment.date = new Date().toISOString;
 
   return fetch(baseUrl + "comments", {
     method: "POST",
     body: JSON.stringify(newComment),
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json=",
     },
   })
     .then(

@@ -87,13 +87,13 @@ export const postComment = (campsiteId, rating, author, text) => (dispatch) => {
     author: author,
     text: text,
   };
-  newComment.date = new Date().toISOString();
+  newComment.date = new Date().toISOString;
 
   return fetch(baseUrl + "comments", {
     method: "POST",
     body: JSON.stringify(newComment),
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json=",
     },
   })
     .then(
@@ -113,11 +113,7 @@ export const postComment = (campsiteId, rating, author, text) => (dispatch) => {
       }
     )
     .then((response) => response.json())
-    .then((response) => dispatch(addComment(response)))
-    .catch((error) => {
-      console.log("post comment", error.message);
-      alert("Your comment could not be posted\nError: " + error.message);
-    });
+    .then((response) => dispatch(addComment(repsonse)));
 };
 
 export const fetchPromotions = () => (dispatch) => {
