@@ -44,23 +44,21 @@ function PartnerList(props) {
     );
   });
 
-  if (props.partnersisLoading) {
+  if (props.isLoading) {
     return <Loading />;
   }
 
-  if (props.partners.errMess) {
+  if (props.errMess) {
     return (
       <div className="col">
-        <h4>{props.partners.errMess}</h4>
+        <h4>{errMess}</h4>
       </div>
     );
   }
 
   return (
     <div className="col mt-4">
-      <Media list>
-        <Stagger in>{partners}</Stagger>
-      </Media>
+      <Media list>{partners}</Media>
     </div>
   );
 }
@@ -135,6 +133,9 @@ function About(props) {
         <div className="col-12">
           <h3>Community Partners</h3>
         </div>
+        {/*<div className="col mt-4">
+          <Media list>{partners}</Media>
+        </div> */}
         <PartnerList partners={props.partners} />
       </div>
     </div>

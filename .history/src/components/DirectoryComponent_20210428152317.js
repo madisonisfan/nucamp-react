@@ -32,11 +32,13 @@ function RenderDirectoryItem({ campsite }) {
 function Directory(props) {
   const directory = props.campsites.campsites.map((campsite) => {
     return (
-      <Fade in key={campsite.id}>
-        <div className="col-md-5 m-1">
-          <RenderDirectoryItem campsite={campsite} />
-        </div>
-      </Fade>
+      <Stagger in>
+        <Fade in key={campsite.id}>
+          <div className="col-md-5 m-1">
+            <RenderDirectoryItem campsite={campsite} />
+          </div>
+        </Fade>
+      </Stagger>
     );
   });
 

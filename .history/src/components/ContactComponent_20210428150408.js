@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 import { Control, Form, Errors } from "react-redux-form";
 import { Link } from "react-router-dom";
-import { Loop, Fade } from "react-animation-components";
+import { Loop } from "react-animation-components";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -41,8 +41,9 @@ class Contact extends Component {
   }
 
   handleSubmit(values) {
+    console.log("Current State is: " + JSON.stringify(values));
+    alert("Current State is: " + JSON.stringify(values));
     this.props.resetFeedbackForm();
-    this.props.postFeedback(values);
   }
 
   render() {
@@ -88,7 +89,7 @@ class Contact extends Component {
         </div>
         <div className="row row-content">
           <div className="col-12">
-            <Loop in interval={1000}>
+            <Loop in>
               <Fade>
                 <h2>Send us your Feedback</h2>
               </Fade>

@@ -12,6 +12,8 @@ import { Loading } from "./LoadingComponent";
 import { FadeTransform, Fade, Stagger } from "react-animation-components";
 import { Link } from "react-router-dom";
 
+
+
 function RenderPartner({ partner }) {
   if (partner) {
     return (
@@ -33,39 +35,43 @@ function RenderPartner({ partner }) {
   }
 }
 
-function PartnerList(props) {
+function PartnerList(props){
   const partners = props.partners.partners.map((partner) => {
     return (
       <Fade in key={partner.id}>
         <Media tag="li" key={partner.id}>
-          <RenderPartner partner={partner} />
-        </Media>
+        <RenderPartner partner={partner} />
+      </Media>
       </Fade>
     );
   });
 
-  if (props.partnersisLoading) {
-    return <Loading />;
+  if(props.isLoading){
+    return <Loading />
   }
 
-  if (props.partners.errMess) {
+  if(props.errMess){
     return (
-      <div className="col">
-        <h4>{props.partners.errMess}</h4>
+      <div className='col'>
+        <h4>{errMess}</h4>
       </div>
-    );
+    )
   }
 
-  return (
-    <div className="col mt-4">
-      <Media list>
-        <Stagger in>{partners}</Stagger>
-      </Media>
-    </div>
-  );
+  return(
+
+  )
 }
 
 function About(props) {
+  /*const partners = props.partners.map((partner) => {
+    return (
+      <Media tag="li" key={partner.id}>
+        <RenderPartner partner={partner} />
+      </Media>
+    );
+  }); */
+
   return (
     <div className="container">
       <div className="row">
@@ -135,7 +141,9 @@ function About(props) {
         <div className="col-12">
           <h3>Community Partners</h3>
         </div>
-        <PartnerList partners={props.partners} />
+        <div className="col mt-4">
+          <Media list>{partners}</Media>
+        </div>
       </div>
     </div>
   );

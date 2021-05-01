@@ -200,7 +200,10 @@ export const partnersFailed = (errMess) => ({
   payload: errMess,
 });
 
+/
+
 export const postFeedback = (feedback) => () => {
+  
   return fetch(baseUrl + "feedback", {
     method: "POST",
     body: JSON.stringify(feedback),

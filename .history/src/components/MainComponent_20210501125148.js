@@ -36,7 +36,7 @@ const mapDispatchToProps = {
   fetchComments: () => fetchComments(),
   fetchPromotions: () => fetchPromotions(),
   fetchPartners: () => fetchPartners(),
-  postFeedback: (feedback) => postFeedback(feedback),
+  postFeedback: () => postFeedback(),
 };
 
 class Main extends Component {

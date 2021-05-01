@@ -10,7 +10,6 @@ import {
 import { Link } from "react-router-dom";
 import { Loading } from "./LoadingComponent";
 import { baseUrl } from "../shared/baseUrl";
-import { Stagger, Fade } from "react-animation-components";
 
 function RenderDirectoryItem({ campsite }) {
   return (
@@ -30,16 +29,6 @@ function RenderDirectoryItem({ campsite }) {
 }
 
 function Directory(props) {
-  const directory = props.campsites.campsites.map((campsite) => {
-    return (
-      <Fade in key={campsite.id}>
-        <div className="col-md-5 m-1">
-          <RenderDirectoryItem campsite={campsite} />
-        </div>
-      </Fade>
-    );
-  });
-
   if (props.campsites.isLoading) {
     return (
       <div className="container">

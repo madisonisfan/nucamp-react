@@ -36,7 +36,7 @@ const mapDispatchToProps = {
   fetchComments: () => fetchComments(),
   fetchPromotions: () => fetchPromotions(),
   fetchPartners: () => fetchPartners(),
-  postFeedback: (feedback) => postFeedback(feedback),
+  postFeedback: () => postFeedback(),
 };
 
 class Main extends Component {
@@ -116,10 +116,7 @@ class Main extends Component {
                 exact
                 path="/contactus"
                 render={() => (
-                  <Contact
-                    resetFeedbackForm={this.props.resetFeedbackForm}
-                    postFeedback={this.props.postFeedback}
-                  />
+                  <Contact resetFeedbackForm={this.props.resetFeedbackForm} />
                 )}
               />
               <Route

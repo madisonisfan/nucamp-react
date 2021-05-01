@@ -1,9 +1,6 @@
 import * as ActionTypes from "./ActionTypes";
 
-export const Partners = (
-  state = { isLoading: true, errMess: null, partners: [] },
-  action
-) => {
+export const Partners = (state = PARTNERS, action) => {
   switch (action.type) {
     case ActionTypes.ADD_PARTNERS:
       return {

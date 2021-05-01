@@ -31,17 +31,15 @@ function RenderComments({ comments, postComment, campsiteId }) {
           <Stagger in>
             {comments.map((comment) => {
               return (
-                <Fade in key={comment.id}>
-                  <div className="mb-3">
-                    {comment.text} <br />
-                    -- {comment.author},{" "}
-                    {new Intl.DateTimeFormat("en-US", {
-                      year: "numeric",
-                      month: "short",
-                      day: "2-digit",
-                    }).format(new Date(Date.parse(comment.date)))}
-                  </div>
-                </Fade>
+                <div className="mb-3">
+                  {comment.text} <br />
+                  -- {comment.author},{" "}
+                  {new Intl.DateTimeFormat("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "2-digit",
+                  }).format(new Date(Date.parse(comment.date)))}
+                </div>
               );
             })}
           </Stagger>
@@ -88,7 +86,7 @@ class CommentForm extends Component {
           Submit Comment
         </Button>
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-          <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
+          <ModalHeader toggle={this.toggleModal}>Submit Commit</ModalHeader>
           <ModalBody>
             <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
               <div className="form-group">

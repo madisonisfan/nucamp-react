@@ -200,7 +200,24 @@ export const partnersFailed = (errMess) => ({
   payload: errMess,
 });
 
+/*
+firstName: " ",
+      lastName: " ",
+      phoneNum: " ",
+      email: " ",
+      agree: false,
+      contactType: "By Phone",
+      feedback: " ", */
+
 export const postFeedback = (feedback) => () => {
+  /* const newFeedback = {
+    campsiteId: campsiteId,
+    rating: rating,
+    author: author,
+    text: text,
+  };
+  newFeedback.date = new Date().toISOString(); */
+
   return fetch(baseUrl + "feedback", {
     method: "POST",
     body: JSON.stringify(feedback),

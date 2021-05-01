@@ -32,7 +32,7 @@ function RenderDirectoryItem({ campsite }) {
 function Directory(props) {
   const directory = props.campsites.campsites.map((campsite) => {
     return (
-      <Fade in key={campsite.id}>
+      <Fade key={campsite.id}>
         <div className="col-md-5 m-1">
           <RenderDirectoryItem campsite={campsite} />
         </div>
@@ -74,9 +74,7 @@ function Directory(props) {
           <hr />
         </div>
       </div>
-      <div className="row">
-        <Stagger in>{directory}</Stagger>
-      </div>
+      <div className="row">{directory}</div>
     </div>
   );
 }

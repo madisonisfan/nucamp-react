@@ -200,7 +200,24 @@ export const partnersFailed = (errMess) => ({
   payload: errMess,
 });
 
+/*
+firstName: " ",
+      lastName: " ",
+      phoneNum: " ",
+      email: " ",
+      agree: false,
+      contactType: "By Phone",
+      feedback: " ", */
+
 export const postFeedback = (feedback) => () => {
+  /* const newFeedback = {
+    campsiteId: campsiteId,
+    rating: rating,
+    author: author,
+    text: text,
+  };
+  newFeedback.date = new Date().toISOString(); */
+
   return fetch(baseUrl + "feedback", {
     method: "POST",
     body: JSON.stringify(feedback),
@@ -230,7 +247,7 @@ export const postFeedback = (feedback) => () => {
       alert("Thank you for your feedback! \n" + JSON.stringify(response));
     })
     .catch((error) => {
-      console.log("feedback", error.message);
-      alert("Your feedback could not be posted\nError: " + error.message);
+      console.log("post feedback", error.message);
+      alert("Your comment could not be posted\nError: " + error.message);
     });
 };
